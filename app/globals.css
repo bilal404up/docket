@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-canvas font-sans text-ink antialiased; }
+  :focus-visible { outline: 2px solid #9a3412; outline-offset: 2px; border-radius: 4px; }
+  ::selection { background: #fdd9c4; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+  .card { @apply rounded-card border border-line bg-paper; }
+  .label { @apply text-xs font-semibold uppercase tracking-wider text-ink-muted; }
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-control px-4 text-sm font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply bg-ember text-white hover:bg-ember-deep; }
+  .btn-quiet { @apply bg-paper text-ink ring-1 ring-inset ring-edge hover:ring-ink; }
+  .btn-danger { @apply bg-paper text-red-ink ring-1 ring-inset ring-red-ink/40 hover:ring-red-ink; }
+  .field { @apply min-h-[44px] w-full rounded-control border border-edge bg-paper px-3 text-sm text-ink; }
+  .tag { @apply inline-flex items-center rounded-tag px-1.5 py-0.5 font-mono text-xs font-semibold; }
+  .mono { @apply font-mono; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in { animation: fade-in 260ms ease-out both; }
+  .hl-pulse { animation: pulse 900ms ease-out 1; }
+}
+@keyframes fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes pulse { 0% { opacity: 0.2; } 100% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@media print {
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+}
+.print-only { display: none; }
