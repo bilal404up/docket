@@ -56,7 +56,7 @@ export function AddDocument({ samples, liveOn }: { samples: TraySample[]; liveOn
       <section aria-labelledby="upload" className="card p-4">
         <h2 id="upload" className="text-lg font-semibold">Upload a file</h2>
         <p className="mt-1 text-sm text-ink-muted">
-          PDF, JPG, PNG, WebP or text, up to 4 MB. {liveOn ? "Your own files are read by a live model, with a small daily limit." : "Live reading is off in this demo, so no paid AI runs. Download a sample below and upload it back to use the real upload path."}
+          PDF, JPG, PNG, WebP or text, up to 4 MB. {liveOn ? "Your own files are read by a live model, with a small daily limit." : "In this demo, uploads are read only when they are one of the samples. Download a sample below and upload it back to see the real upload path. Your own files are not read, so no paid AI runs."}
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <input ref={file} type="file" accept="application/pdf,image/jpeg,image/png,image/webp,text/plain,text/csv" className="field max-w-sm py-2" aria-label="Choose a file" />
@@ -92,12 +92,12 @@ export function AddDocument({ samples, liveOn }: { samples: TraySample[]; liveOn
         <h2 id="paste" className="text-lg font-semibold">Paste an email</h2>
         <label className="mt-2 block">
           <span className="sr-only">Email or CSV text</span>
-          <textarea className="field min-h-[9rem] py-2 font-mono" value={text} onChange={(e) => setText(e.target.value)} placeholder="Paste an order email or a CSV export" />
+          <textarea className="field min-h-[9rem] py-2 font-mono" value={text} onChange={(e) => setText(e.target.value)} placeholder="Paste the text of a sample email or CSV from the samples list" />
         </label>
         <button type="button" className="btn btn-primary mt-3" disabled={busy !== null || !text.trim()} onClick={() => send("paste", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ text }) })}>
           {busy === "paste" ? "Reading…" : "Read this text"}
         </button>
-        <p className="mt-2 text-xs text-ink-muted">{rest.length ? "Tip: pasting the text of one of the sample emails uses its saved reading." : ""}</p>
+        <p className="mt-2 text-xs text-ink-muted">Only the text of a sample is read here. Your own text is not read, so no paid AI runs.</p>
       </section>
 
       {error ? <p role="alert" className="rounded-control border border-red-ink/40 bg-red-tint p-3 text-sm text-red-ink">{error}</p> : null}
