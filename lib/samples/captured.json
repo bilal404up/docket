@@ -1,1 +1,419 @@
-{}
+{
+  "kettle-pdf": {
+    "model": "qwen2.5:3b",
+    "captured": "2026-10-15",
+    "reading": {
+      "customer_name": "Kettle & Crumb",
+      "customer_quote": "PO KC-2291",
+      "delivery_text": "Thursday, before 6:00 am",
+      "delivery_quote": "Delivery: Thursday, before 6:00 am",
+      "po_number": "PO KC-2291",
+      "notes": "Please invoice monthly as usual. Thank you!",
+      "repeat_previous": false,
+      "repeat_quote": "",
+      "lines": [
+        {
+          "raw_text": "Sourdough, large 6 each",
+          "product_text": "Sourdough, large",
+          "quantity": 6,
+          "unit_text": "each",
+          "quantity_legible": true,
+          "source_quote": "Sourdough, large 6 each"
+        },
+        {
+          "raw_text": "Baguettes 10 each",
+          "product_text": "Baguettes",
+          "quantity": 10,
+          "unit_text": "each",
+          "quantity_legible": true,
+          "source_quote": "Baguettes 10 each"
+        },
+        {
+          "raw_text": "Croissants 24 each",
+          "product_text": "Croissants",
+          "quantity": 24,
+          "unit_text": "each",
+          "quantity_legible": true,
+          "source_quote": "Croissants 24 each"
+        },
+        {
+          "raw_text": "Pain au chocolat 12 each",
+          "product_text": "Pain au chocolat",
+          "quantity": 12,
+          "unit_text": "each",
+          "quantity_legible": true,
+          "source_quote": "Pain au chocolat 12 each"
+        }
+      ],
+      "adjustments": []
+    }
+  },
+  "harbor-letter": {
+    "model": "qwen2.5:3b",
+    "captured": "2026-10-15",
+    "reading": {
+      "customer_name": "Harbor Lane Café",
+      "customer_quote": "Harbor Lane Café",
+      "delivery_text": "Thursday",
+      "delivery_quote": "Thursday",
+      "po_number": "",
+      "notes": "Same drop-off as always, back door by the bins.",
+      "repeat_previous": false,
+      "repeat_quote": "",
+      "lines": [
+        {
+          "raw_text": "4 sour lg",
+          "product_text": "sour lg",
+          "quantity": 4,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "4 sour lg"
+        },
+        {
+          "raw_text": "2 doz croissants",
+          "product_text": "croissants",
+          "quantity": 2,
+          "unit_text": "doz",
+          "quantity_legible": true,
+          "source_quote": "2 doz croissants"
+        },
+        {
+          "raw_text": "12 cinnamon buns",
+          "product_text": "cinnamon buns",
+          "quantity": 12,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "12 cinnamon buns"
+        },
+        {
+          "raw_text": "6 almond crossaints",
+          "product_text": "almond crossaints",
+          "quantity": 6,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "6 almond crossaints"
+        }
+      ],
+      "adjustments": []
+    }
+  },
+  "longtable-email": {
+    "model": "qwen2.5:3b",
+    "captured": "2026-10-15",
+    "reading": {
+      "customer_name": "The Long Table",
+      "customer_quote": "Same as last week for Thursday plus 2 baguettes, no rye",
+      "delivery_text": "Thursday",
+      "delivery_quote": "Thursday",
+      "po_number": null,
+      "notes": null,
+      "repeat_previous": true,
+      "repeat_quote": "Same as last week for Thursday",
+      "lines": [
+        {
+          "raw_text": "plus 2 baguettes",
+          "product_text": "baguettes",
+          "quantity": null,
+          "unit_text": "",
+          "quantity_legible": false,
+          "source_quote": "Same as last week for Thursday plus 2 baguettes, no rye"
+        },
+        {
+          "raw_text": "no rye",
+          "product_text": "rye",
+          "quantity": null,
+          "unit_text": "",
+          "quantity_legible": false,
+          "source_quote": "Same as last week for Thursday plus 2 baguettes, no rye"
+        }
+      ],
+      "adjustments": [
+        {
+          "op": "add",
+          "product_text": "baguettes",
+          "quantity": 2,
+          "source_quote": "Same as last week for Thursday plus 2 baguettes, no rye"
+        },
+        {
+          "op": "remove",
+          "product_text": "rye",
+          "quantity": 1,
+          "source_quote": "Same as last week for Thursday plus 2 baguettes, no rye"
+        }
+      ]
+    }
+  },
+  "pinepour-pdf": {
+    "model": "qwen2.5:3b",
+    "captured": "2026-10-15",
+    "reading": {
+      "customer_name": "Pine & Pour",
+      "customer_quote": "Coffee · Natural wine",
+      "delivery_text": "3 Elm Parade",
+      "delivery_quote": "Order for Ashgrove Bakery",
+      "po_number": "",
+      "notes": "",
+      "repeat_previous": false,
+      "repeat_quote": "",
+      "lines": [
+        {
+          "raw_text": "Product Qty",
+          "product_text": "Product Qty",
+          "quantity": null,
+          "unit_text": "",
+          "quantity_legible": false,
+          "source_quote": "Product Qty"
+        },
+        {
+          "raw_text": "Croissant 12",
+          "product_text": "Croissant",
+          "quantity": 12,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "Croissant 12"
+        },
+        {
+          "raw_text": "Pain au choc 12",
+          "product_text": "Pain au choc",
+          "quantity": 12,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "Pain au choc 12"
+        },
+        {
+          "raw_text": "Banana loaf 2",
+          "product_text": "Banana loaf",
+          "quantity": 2,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "Banana loaf 2"
+        }
+      ],
+      "adjustments": [
+        {
+          "op": "add",
+          "product_text": "Croissant",
+          "quantity": 12,
+          "source_quote": "Croissant 12"
+        },
+        {
+          "op": "add",
+          "product_text": "Pain au choc",
+          "quantity": 12,
+          "source_quote": "Pain au choc 12"
+        },
+        {
+          "op": "add",
+          "product_text": "Banana loaf",
+          "quantity": 2,
+          "source_quote": "Banana loaf 2"
+        }
+      ]
+    }
+  },
+  "millst-pdf": {
+    "model": "qwen2.5:3b",
+    "captured": "2026-10-15",
+    "reading": {
+      "customer_name": "Mill Street Deli",
+      "customer_quote": "Wholesale order",
+      "delivery_text": "Deliver: Thursday",
+      "delivery_quote": "",
+      "po_number": "",
+      "notes": "",
+      "repeat_previous": false,
+      "repeat_quote": "",
+      "lines": [
+        {
+          "raw_text": "Item Qty",
+          "product_text": "Baguette",
+          "quantity": 20,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "Item Qty"
+        },
+        {
+          "raw_text": "Item Qty",
+          "product_text": "Sourdough small",
+          "quantity": 6,
+          "unit_text": "each",
+          "quantity_legible": true,
+          "source_quote": "Item Qty"
+        },
+        {
+          "raw_text": "Item Qty",
+          "product_text": "Focaccia slab",
+          "quantity": 2,
+          "unit_text": "slab",
+          "quantity_legible": true,
+          "source_quote": "Item Qty"
+        }
+      ],
+      "adjustments": []
+    }
+  },
+  "kettle-resend": {
+    "model": "qwen2.5:3b",
+    "captured": "2026-10-15",
+    "reading": {
+      "customer_name": "Kettle & Crumb",
+      "customer_quote": "Resending in case the PDF didn't come through.",
+      "delivery_text": "Thursday",
+      "delivery_quote": "For Thursday:",
+      "po_number": null,
+      "notes": null,
+      "repeat_previous": false,
+      "repeat_quote": "",
+      "lines": [
+        {
+          "raw_text": "6 large sourdough",
+          "product_text": "large sourdough",
+          "quantity": 6,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "6 large sourdough"
+        },
+        {
+          "raw_text": "10 baguettes",
+          "product_text": "baguettes",
+          "quantity": 10,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "10 baguettes"
+        },
+        {
+          "raw_text": "24 croissants",
+          "product_text": "croissants",
+          "quantity": 24,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "24 croissants"
+        },
+        {
+          "raw_text": "12 pain au chocolat",
+          "product_text": "pain au chocolat",
+          "quantity": 12,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "12 pain au chocolat"
+        }
+      ],
+      "adjustments": []
+    }
+  },
+  "orchard-pdf": {
+    "model": "qwen2.5:3b",
+    "captured": "2026-10-15",
+    "reading": {
+      "customer_name": "Orchard Café",
+      "customer_quote": "Delivery day: Thursday",
+      "delivery_text": "Thursday",
+      "delivery_quote": "Delivery day: Thursday",
+      "po_number": "",
+      "notes": "",
+      "repeat_previous": false,
+      "repeat_quote": "",
+      "lines": [
+        {
+          "raw_text": "Croissant 60",
+          "product_text": "Croissant",
+          "quantity": 60,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "Croissant 60"
+        },
+        {
+          "raw_text": "Almond croissant 6",
+          "product_text": "Almond croissant",
+          "quantity": 6,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "Almond croissant 6"
+        },
+        {
+          "raw_text": "Cinnamon bun 6",
+          "product_text": "Cinnamon bun",
+          "quantity": 6,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "Cinnamon bun 6"
+        }
+      ],
+      "adjustments": []
+    }
+  },
+  "saltbox-email": {
+    "model": "qwen2.5:3b",
+    "captured": "2026-10-15",
+    "reading": {
+      "customer_name": "Saltbox",
+      "customer_quote": "For Sunday please:",
+      "delivery_text": "Sunday",
+      "delivery_quote": "",
+      "po_number": "",
+      "notes": "",
+      "repeat_previous": false,
+      "repeat_quote": "",
+      "lines": [
+        {
+          "raw_text": "4 small sourdough",
+          "product_text": "small sourdough",
+          "quantity": 4,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "For Sunday please:"
+        },
+        {
+          "raw_text": "1 focaccia tray",
+          "product_text": "focaccia tray",
+          "quantity": 1,
+          "unit_text": "tray",
+          "quantity_legible": true,
+          "source_quote": "For Sunday please:"
+        },
+        {
+          "raw_text": "2 seeded loaves",
+          "product_text": "seeded loaves",
+          "quantity": 2,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "For Sunday please:"
+        }
+      ],
+      "adjustments": []
+    }
+  },
+  "harbor-csv": {
+    "model": "qwen2.5:3b",
+    "captured": "2026-10-15",
+    "reading": {
+      "customer_name": "Harbor Lane Cafe",
+      "customer_quote": "HL-118",
+      "delivery_text": "Thursday",
+      "delivery_quote": "HL-118",
+      "po_number": "HL-118",
+      "notes": "",
+      "repeat_previous": false,
+      "repeat_quote": "",
+      "lines": [
+        {
+          "raw_text": "HL-118 Harbor Lane Cafe Thursday BAG Baguette 6",
+          "product_text": "Baguette",
+          "quantity": 6,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "HL-118"
+        },
+        {
+          "raw_text": "HL-118 Harbor Lane Cafe Thursday BRI Brioche loaf 2",
+          "product_text": "Brioche loaf",
+          "quantity": 2,
+          "unit_text": "",
+          "quantity_legible": true,
+          "source_quote": "HL-118"
+        }
+      ],
+      "adjustments": []
+    }
+  }
+}

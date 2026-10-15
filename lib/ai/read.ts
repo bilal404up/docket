@@ -174,3 +174,38 @@ export function validateReading(raw: unknown): Reading {
     }),
   };
 }
+
+/** Reads with a model running on this computer through Ollama. Used only by `npm run pre-read`. */
+export async function readWithOllama(text: string): Promise<Reading> {
+  const base = process.env.OLLAMA_URL || "http://localhost:11434";
+  const model = process.env.OLLAMA_MODEL || "deepseek-r1:7b";
+  const res = await fetch(`${base}/api/chat`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      model,
+      stream: false,
+      format: READING_SCHEMA,
+      options: { temperature: 0 },
+      messages: [
+        { role: "system", content: INSTRUCTIONS },
+        { role: "user", content: `Transcribe this document:\n\n${text}` },
+      ],
+    }),
+    signal: AbortSignal.timeout(300_000),
+  });
+  if (!res.ok) throw new UserError("model_failed", `Ollama answered ${res.status}. Is it running?`);
+  const json = await res.json();
+  const content = String(json?.message?.content ?? "").replace(/<think>[\s\S]*?<\/think>/g, "").trim();
+  let raw: unknown;
+  try {
+    raw = JSON.parse(content.slice(content.indexOf("{"), content.lastIndexOf("}") + 1));
+  } catch {
+    throw unusable();
+  }
+  return validateReading(raw);
+}
+
+export function localModelName() {
+  return process.env.OLLAMA_MODEL || "deepseek-r1:7b";
+}
