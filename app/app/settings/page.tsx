@@ -22,7 +22,9 @@ export default async function SettingsPage() {
         <h2 id="reading" className="font-semibold">How documents are read</h2>
         <p className="text-sm text-ink-muted">
           {live
-            ? `Live reading is on, using ${liveModel()}. Each upload you add costs a small amount, and there is a daily limit per sandbox.`
+            ? process.env.DOCKET_READER === "model"
+              ? `Live reading is on, using ${liveModel()}. Each upload you add costs a small amount, and there is a daily limit per sandbox.`
+              : "Live reading is on, using a rules reader that uses no AI and costs nothing. It finds the usual order lines and leaves anything unclear for you to check. Photos are not read. There is a daily limit per sandbox."
             : "Live reading is off, so no paid AI runs in this demo. The ten samples use readings saved from a model, and the checks run live on those readings."}
         </p>
       </section>

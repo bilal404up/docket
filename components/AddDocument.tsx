@@ -56,7 +56,7 @@ export function AddDocument({ samples, liveOn }: { samples: TraySample[]; liveOn
       <section aria-labelledby="upload" className="card p-4">
         <h2 id="upload" className="text-lg font-semibold">Upload a file</h2>
         <p className="mt-1 text-sm text-ink-muted">
-          PDF, JPG, PNG, WebP or text, up to 4 MB. {liveOn ? "Your own files are read by a live model, with a small daily limit." : "In this demo, uploads are read only when they are one of the samples. Download a sample below and upload it back to see the real upload path. Your own files are not read, so no paid AI runs."}
+          PDF, JPG, PNG, WebP or text, up to 4 MB. {liveOn ? "Your own text files are read by a simple rules reader that uses no AI, with a small daily limit. Photos are not read." : "In this demo, uploads are read only when they are one of the samples. Download a sample below and upload it back to see the real upload path. Your own files are not read, so no paid AI runs."}
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <input ref={file} type="file" accept="application/pdf,image/jpeg,image/png,image/webp,text/plain,text/csv" className="field max-w-sm py-2" aria-label="Choose a file" />

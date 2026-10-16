@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { liveModel, liveReadingEnabled, readWithModel } from "@/lib/ai/read";
+import { readWithRules } from "@/lib/ai/rules";
 import { storyAt, storyNow } from "@/lib/clock";
 import { UserError, must } from "@/lib/errors";
 import { logEvent } from "@/lib/events";
@@ -191,9 +192,16 @@ async function readAndBuild(sb: SupabaseClient, ws: Workspace, a: BuildArgs): Pr
       reading = a.fixture.reading;
       meta = a.fixture.meta;
     } else {
-      const imageDataUrl = a.image ? `data:${a.image.mime};base64,${Buffer.from(a.image.bytes).toString("base64")}` : undefined;
-      reading = await readWithModel({ source: a.source, text: imageDataUrl ? undefined : layerToText(a.layer), imageDataUrl });
-      meta = { mode: "live", kind: "model", model: liveModel(), captured: new Date().toISOString().slice(0, 10) };
+      const today = new Date().toISOString().slice(0, 10);
+      if (process.env.DOCKET_READER === "model") {
+        const imageDataUrl = a.image ? `data:${a.image.mime};base64,${Buffer.from(a.image.bytes).toString("base64")}` : undefined;
+        reading = await readWithModel({ source: a.source, text: imageDataUrl ? undefined : layerToText(a.layer), imageDataUrl });
+        meta = { mode: "live", kind: "model", model: liveModel(), captured: today };
+      } else {
+        if (a.image) throw new UserError("photo_needs_model", "Photos need the AI reader, which is off in this demo. Upload a PDF or a text file instead.");
+        reading = readWithRules(layerToText(a.layer));
+        meta = { mode: "live", kind: "rules", model: "rules, no AI", captured: today };
+      }
     }
   } catch (e) {
     const message = e instanceof UserError ? e.message : "The AI reader failed. Try again.";

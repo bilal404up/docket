@@ -47,7 +47,7 @@ export type Reading = {
 
 export type ReadingMeta = {
   mode: "fixture" | "live";
-  kind: "reference" | "model";
+  kind: "reference" | "model" | "rules";
   model: string;
   captured: string;
 };

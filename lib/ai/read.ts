@@ -1,8 +1,9 @@
 import { UserError } from "@/lib/errors";
 import type { Adjustment, Reading, ReadingLine, SourceKind } from "@/lib/types";
 
+/** On means visitors' own uploads are read. The reader is the AI model only when DOCKET_READER=model, otherwise the rules reader (no AI, no cost). */
 export function liveReadingEnabled() {
-  return process.env.DOCKET_LIVE_READING === "on" && Boolean(process.env.OPENAI_API_KEY);
+  return process.env.DOCKET_LIVE_READING === "on";
 }
 
 export function liveModel() {

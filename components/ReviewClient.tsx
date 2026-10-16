@@ -176,7 +176,9 @@ export function ReviewClient({ order }: { order: OrderView }) {
         {order.reading ? (
           <p className="mt-3 rounded-control border border-line bg-paper p-3 text-sm text-ink-muted">
             {order.reading.mode === "live"
-              ? `Read live by ${order.reading.model}.`
+              ? order.reading.kind === "rules"
+                ? "Read live by a rules reader that uses no AI. Check the quantities and names before approving."
+                : `Read live by ${order.reading.model}.`
               : order.reading.kind === "model"
                 ? `A saved reading by ${order.reading.model}, captured ${order.reading.captured}. Not a live AI call; the checks below ran live.`
                 : "A saved reference reading, typed by hand for this demo. Not a live AI call; the checks below ran live."}
