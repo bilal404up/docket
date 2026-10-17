@@ -14,7 +14,7 @@ export default function Landing() {
           <p className="label">Demo, invented data</p>
           <h1 className="mt-3 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">Messy orders in. Checked data out.</h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-muted">
-            Cafés send wholesale orders as PDFs, emails, phone photos and spreadsheet exports. Docket reads each one, matches the items to the catalog, and flags anything doubtful with a plain reason. A person approves it, and it lands on the bake sheet.
+            Cafés send wholesale orders as PDFs, emails and spreadsheet exports, each in their own words. Docket reads each one, matches the items to the catalog, and flags anything doubtful with a plain reason. A person approves it, and it lands on the bake sheet.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/demo" className="btn btn-primary">Open the demo</Link>
@@ -37,8 +37,8 @@ export default function Landing() {
       <section id="how" className="border-y border-line bg-paper py-12">
         <div className="wrap grid gap-6 sm:grid-cols-3">
           <div>
-            <h2 className="font-semibold">The AI reads, the code decides</h2>
-            <p className="mt-2 text-sm leading-relaxed text-ink-muted">The model only transcribes. Matching, dates, cut-offs, units and duplicates are plain rules, so every decision has a reason you can read.</p>
+            <h2 className="font-semibold">Rules decide, nothing is guessed</h2>
+            <p className="mt-2 text-sm leading-relaxed text-ink-muted">Matching, dates, cut-offs, units and duplicates are plain rules, so every decision has a reason you can read. No AI runs in this demo.</p>
           </div>
           <div>
             <h2 className="font-semibold">Nothing is guessed silently</h2>
@@ -53,7 +53,7 @@ export default function Landing() {
 
       <footer className="wrap flex flex-col gap-2 py-8 text-sm text-ink-muted sm:flex-row sm:justify-between">
         <p>Demo built by Bilal for his portfolio. The bakery, cafés, products and documents are invented.</p>
-        <p>Live AI reading is off unless the site owner turns it on.</p>
+        <p>An optional AI reader for photographed orders is in the code, switched off here.</p>
       </footer>
     </main>
   );
